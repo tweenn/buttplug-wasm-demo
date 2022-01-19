@@ -1,0 +1,23 @@
+{
+	"name": "buttplug-browser-demo",
+	"version": "1.0.0",
+	"description": "Just a buttplug browser/js demo",
+	"main": "index.js",
+	"author": "Felipe Zuntini <felipezuntini@hotmail.com>",
+	"license": "MIT",
+	"private": false,
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:tweenn/buttplug-wasm-demo.git"
+	},
+	"scritps": {
+		"deploy": "gulp deploy"
+	},
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-clean": "^0.4.0",
+		"gulp-cli": "^2.3.0",
+		"gulp-rename": "^2.0.0",
+		"gulp-surge": "^0.1.4"
+	}
+}
