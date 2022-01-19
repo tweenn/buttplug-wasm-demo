@@ -4,13 +4,15 @@ import htm from 'https://unpkg.com/htm?module';
 const html = htm.bind(h);
 
 // REFACTOR THIS PROPS
-export default (props) => {
-
-	const id = props.id || `${(new Date()).getTime()}-${Math.random()}`;
+export default ({
+	id = `${(new Date()).getTime()}-${Math.random()}`,
+	showTOS = false,
+	setShow = () => {}
+}) => {
 
 	const shouldShowDialog = async () => {
-		await new Promise(r => setTimeout(r, 100));
-		if (props.show) {
+		if (showTOS) {
+			await new Promise(r => setTimeout(r, 100));
 			document.getElementById(id).showModal();
 		} else {
 			document.getElementById(id).close();
@@ -18,9 +20,7 @@ export default (props) => {
 	}
 
 	const closeDialog = () => {
-		if (props.setShow) {
-			props.setShow(false);
-		}
+		setShow(false);
 	}
 
 	shouldShowDialog();
@@ -36,7 +36,7 @@ export default (props) => {
 						You should be 18+ to play around with this.
 					</li>
 					<li>
-						You should have a ButtPlug compatible "toy", please check <a href="https://iostindex.com/?filter0ButtplugSupport=4" target="_blank" referrer="no-referrer">this list</a> if you have it
+						You should have a ButtPlug compatible "toy", please check [ <a href="https://iostindex.com/?filter0ButtplugSupport=4" target="_blank" referrer="no-referrer">this list</a> ] if you have it
 					</li>
 				</ul>
 			</div>

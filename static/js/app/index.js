@@ -16,7 +16,7 @@ const html = htm.bind(h);
 
 export default () => {
 	// const [showTOS, setShowTOS] = useState(true);
-	const [showTOS, setShowTOS] = useState(false);
+	const [showTOS, setShowTOS] = useState(true);
 
 	router.init();
 
@@ -33,7 +33,7 @@ export default () => {
 			</main>
 		</div>
 		<${TermsOfService}
-			show="${showTOS}"
+			showTOS="${showTOS}"
 			setShow="${setShowTOS}"
 			id="tos-dialog"
 		/>
